@@ -37,6 +37,8 @@ func run() error {
 		switch *part {
 		case 1:
 			f = day1.PartOne
+		case 2:
+			f = day1.PartTwo
 		default:
 			fmt.Printf("Day %d Part %d not implemented yet.", *day, *part)
 			os.Exit(1)
