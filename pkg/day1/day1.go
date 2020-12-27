@@ -3,6 +3,7 @@ package day1
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"io"
 	"strconv"
@@ -22,19 +23,15 @@ func PartOne(r io.Reader) (int, error) {
 		}
 	}
 
-	return 0, nil
+	return 0, errors.New("no 2 summands formed the sum 2020")
 }
 
 func scanInts(r io.Reader) ([]int, error) {
 	var numbers []int
 	scanner := bufio.NewScanner(r)
 
-	for {
-		scanner.Scan()
+	for scanner.Scan() {
 		number := scanner.Text()
-		if len(number) == 0 {
-			break
-		}
 		n, err := strconv.Atoi(number)
 		if err != nil {
 			return nil, fmt.Errorf("converting %v to int: %w", number, err)

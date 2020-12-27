@@ -25,6 +25,16 @@ func TestPart1(t *testing.T) {
 			514579,
 			false,
 		},
+		"empty input": {
+			strings.NewReader(``),
+			0,
+			true,
+		},
+		"not a number": {
+			strings.NewReader(`foo`),
+			0,
+			true,
+		},
 	}
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
