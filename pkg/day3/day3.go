@@ -46,7 +46,6 @@ func treesOnSlope(input []string, right, down int) int {
 	for i := 0; i < len(input); i = i + down {
 		line := input[i]
 		j := ring.Value.(int)
-		fmt.Println(j)
 		if string(line[j]) == tree {
 			trees++
 		}
