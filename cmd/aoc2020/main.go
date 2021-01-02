@@ -9,6 +9,7 @@ import (
 
 	"github.com/dermorz/advent-of-code-2020/pkg/day1"
 	"github.com/dermorz/advent-of-code-2020/pkg/day2"
+	"github.com/dermorz/advent-of-code-2020/pkg/day3"
 )
 
 func main() {
@@ -50,6 +51,16 @@ func run() error {
 			f = day2.PartOne
 		case 2:
 			f = day2.PartTwo
+		default:
+			fmt.Printf("Day %d Part %d not implemented yet.", *day, *part)
+			os.Exit(1)
+		}
+	case 3:
+		switch *part {
+		case 1:
+			f = day3.PartOne
+		case 2:
+			f = day3.PartTwo
 		default:
 			fmt.Printf("Day %d Part %d not implemented yet.", *day, *part)
 			os.Exit(1)
