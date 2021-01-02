@@ -18,6 +18,9 @@ func PartOne(r io.Reader) (int, error) {
 	if err != nil {
 		return 0, fmt.Errorf("scanning input: %w", err)
 	}
+	if len(input) == 0 {
+		return 0, nil
+	}
 	return treesOnSlope(input, 3, 1), nil
 }
 
@@ -26,6 +29,9 @@ func PartTwo(r io.Reader) (int, error) {
 	input, err := scanMap(r)
 	if err != nil {
 		return 0, fmt.Errorf("scanning input: %w", err)
+	}
+	if len(input) == 0 {
+		return 0, nil
 	}
 	return treesOnSlope(input, 1, 1) *
 		treesOnSlope(input, 3, 1) *
