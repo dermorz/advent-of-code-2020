@@ -71,7 +71,7 @@ func TestPart2(t *testing.T) {
 		"empty input": {
 			strings.NewReader(``),
 			0,
-			false,
+			true,
 		},
 	}
 	for name, tt := range tests {
